@@ -1,12 +1,15 @@
 require('dotenv').config();
 import express, { Express, Request, Response } from 'express';
-
-const server: Express = express();
+import cors from 'cors';
+const app: Express = express();
 const port = 8080;
-server.get('/', (req: Request, res: Response) => {
+
+app.use(cors);
+app.use(express.json());
+app.get('/', (req: Request, res: Response) => {
   res.send('Server testing');
 });
 
-server.listen(port, () => {
+app.listen(port, () => {
   console.log(`server listening on http://localhost:${port}`);
 });

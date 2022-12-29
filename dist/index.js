@@ -5,11 +5,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 require('dotenv').config();
 const express_1 = __importDefault(require("express"));
-const server = (0, express_1.default)();
+const cors_1 = __importDefault(require("cors"));
+const app = (0, express_1.default)();
 const port = 8080;
-server.get('/', (req, res) => {
+app.use(cors_1.default);
+app.use(express_1.default.json());
+app.get('/', (req, res) => {
     res.send('Server testing');
 });
-server.listen(port, () => {
+app.listen(port, () => {
     console.log(`server listening on http://localhost:${port}`);
 });
