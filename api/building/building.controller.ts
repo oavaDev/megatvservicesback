@@ -1,11 +1,10 @@
-import express, { Express, Request, Response } from 'express';
+import { Request, Response } from 'express';
 import {
   createBuilding,
   showBuilding,
   showBuildings,
   deleteBuilding,
 } from './building.service';
-import Building from './building.model';
 
 const createBuildingHandler = async (req: Request, res: Response) => {
   const data = req.body;
