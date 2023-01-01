@@ -7,9 +7,8 @@ require('dotenv').config();
 const express_1 = __importDefault(require("express"));
 const express_2 = __importDefault(require("./express"));
 const app = (0, express_1.default)();
-const port = 8080;
-app.listen(port, () => {
+app.listen(process.env.APP_PORT || 8080, () => {
     (0, express_2.default)(app);
-    console.log(`server listening on http://localhost:${port}`);
+    console.log(`server listening on http://localhost:${process.env.APP_PORT || 8080}`);
 });
 exports.default = app;

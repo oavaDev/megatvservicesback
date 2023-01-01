@@ -4,11 +4,12 @@ import cors from 'cors';
 import expressConfig from './express';
 
 const app: Express = express();
-const port = 8080;
 
-app.listen(port, () => {
+app.listen(process.env.APP_PORT || 8080, () => {
   expressConfig(app);
-  console.log(`server listening on http://localhost:${port}`);
+  console.log(
+    `server listening on http://localhost:${process.env.APP_PORT || 8080}`
+  );
 });
 
 export default app;
