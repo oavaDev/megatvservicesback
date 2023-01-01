@@ -1,6 +1,6 @@
 import { Schema, model, connect } from 'mongoose';
 
-interface IBuilding {
+export interface IBuilding {
   id?: string;
   name: string;
   address: string;
