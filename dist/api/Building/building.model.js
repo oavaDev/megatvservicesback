@@ -10,5 +10,5 @@ const BuildingSchema = new mongoose_1.Schema({
     postal: { type: String, required: true },
     plans: [{}],
 }, { timestamps: true });
-const Building = (0, mongoose_1.model)('User', BuildingSchema);
+const Building = (0, mongoose_1.model)('Building', BuildingSchema);
 exports.default = Building;

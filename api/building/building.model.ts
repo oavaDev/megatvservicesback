@@ -1,4 +1,4 @@
-import { Schema, model} from 'mongoose';
+import { Schema, model } from 'mongoose';
 
 export interface IBuilding {
   id?: string;
@@ -23,6 +23,6 @@ const BuildingSchema = new Schema<IBuilding>(
   { timestamps: true }
 );
 
-const Building = model<IBuilding>('User', BuildingSchema);
+const Building = model<IBuilding>('Building', BuildingSchema);
 
 export default Building;
